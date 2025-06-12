@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DE&LIN Fashion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .hero {
+      background-color: #e8d6cf;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #555;
+    }
+    .hero-text button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .shop-btn {
+      background-color: #b68978;
+      color: white;
+    }
+    .story-btn {
+      background-color: transparent;
+      border: 1px solid #b68978;
+      color: #b68978;
+    }
+    .hero-image {
+      width: 300px;
+      height: 200px;
+      background-color: #f6ece9;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #888;
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .products, .about, .faq, .contact, .order {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .products h3, .about h3, .faq h3, .contact h3, .order h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background-color: #f6ece9;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .product-card p {
+      margin-top: 10px;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #b68978;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DE&LIN Fashion</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#products">Our Products</a>
+      <a href="#about">About Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Timeless Elegance, Modern Style</h2>
+      <p>Discover our handcrafted collection of premium garments designed for the modern individual who appreciates quality and style.</p>
+      <button class="shop-btn">Shop Collection</button>
+      <button class="story-btn">Our Story</button>
+    </div>
+    <div class="hero-image" onclick="alert('In a real site, this opens image upload')">
+      <div>
+        <p><strong>Hero Image</strong></p>
+        <p style="font-size: 12px;">Click to add your image</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <h3>Our Products</h3>
+    <div class="product-grid">
+      <div class="product-card" onclick="alert('Upload image here')">
+        <div>Product Image 1</div>
+        <p>Classic Linen Shirt</p>
+      </div>
+      <div class="product-card" onclick="alert('Upload image here')">
+        <div>Product Image 2</div>
+        <p>Tailored Cotton Pants</p>
+      </div>
+      <div class="product-card" onclick="alert('Upload image here')">
+        <div>Product Image 3</div>
+        <p>Casual Wool Sweater</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h3>About Us</h3>
+    <p style="text-align: center; max-width: 700px; margin: auto;">DE&LIN Fashion is a family-owned garment business committed to offering timeless, handcrafted fashion pieces that combine elegance and everyday comfort.</p>
+  </section>
+
+  <section id="faq" class="faq">
+    <h3>FAQ</h3>
+    <div class="faq-item">
+      <strong>What types of products do you sell?</strong>
+      <p>We sell a variety of premium garments including shirts, pants, and seasonal wear for men and women.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Do you offer custom tailoring?</strong>
+      <p>Yes, we offer custom tailoring services upon request for select items.</p>
+    </div>
+  </section>
+
+  <section id="order" class="order">
+    <h3>Place an Order</h3>
+    <p style="text-align:center;">To place an order, please fill out the form below and we’ll contact you for confirmation and payment.</p>
+    <form onsubmit="alert('Order submitted! Payment method will follow.'); return false;">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Product Name / Code" required />
+      <textarea rows="4" placeholder="Additional Notes (Size, Color, etc)"></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <section id="contact" class="contact">
+    <h3>Contact Us</h3>
+    <p style="text-align: center; max-width: 700px; margin: auto;">Have questions or custom requests? Reach us via WhatsApp at <strong>+62-xxx-xxx-xxxx</strong> or email <strong>delinfashion@example.com</strong>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DE&LIN Fashion. All rights reserved.</p>
+  </footer>
+</body>
+</html>
