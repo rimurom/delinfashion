@@ -1,220 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DE&LIN Fashion</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #fff;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #eee;
-    }
-    header h1 {
-      font-weight: bold;
-      font-size: 24px;
-    }
-    nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-    .hero {
-      background-color: #e8d6cf;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px 40px;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      max-width: 500px;
-    }
-    .hero-text h2 {
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
-    .hero-text p {
-      font-size: 16px;
-      margin-bottom: 25px;
-      color: #555;
-    }
-    .hero-text button {
-      padding: 10px 20px;
-      margin-right: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .shop-btn {
-      background-color: #b68978;
-      color: white;
-    }
-    .story-btn {
-      background-color: transparent;
-      border: 1px solid #b68978;
-      color: #b68978;
-    }
-    .hero-image {
-      width: 300px;
-      height: 200px;
-      background-color: #f6ece9;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #888;
-      text-align: center;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    .products, .about, .faq, .contact, .order {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .products h3, .about h3, .faq h3, .contact h3, .order h3 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .product-card {
-      background-color: #f6ece9;
-      padding: 15px;
-      text-align: center;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .product-card p {
-      margin-top: 10px;
-    }
-    .faq-item {
-      margin-bottom: 15px;
-    }
-    .faq-item strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    form button {
-      background-color: #b68978;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    footer {
-      background-color: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DE&LIN Fashion - Konveksi & Jasa Makloon Terpercaya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #d63384 0%, #e91e63 50%, #f06292 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d63384;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d63384;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #d63384;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .company-intro {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .company-intro p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .company-intro ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .company-intro li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fce4ec 0%, #f8bbd9 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #d63384;
+        }
+
+        .highlight h3 {
+            color: #d63384;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .highlight p, .highlight ol {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .highlight ol {
+            padding-left: 20px;
+        }
+
+        .highlight li {
+            margin-bottom: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #d63384, #e91e63);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(214, 51, 132, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            margin-bottom: 40px;
+        }
+
+        .clients-section h3 {
+            color: #d63384;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .client-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #d63384;
+        }
+
+        .client-card .brand-name {
+            color: #d63384;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .client-card .location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #d63384;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .service-features {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .service-features li {
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #d63384 0%, #e91e63 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .contact-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .company-intro {
+                padding: 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>DE&LIN Fashion</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#products">Our Products</a>
-      <a href="#about">About Us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">DE&LIN Fashion</h1>
+                <p class="hero-subtitle">Konveksi & Jasa Makloon Terpercaya</p>
+                <p class="hero-tagline">Mitra Terpercaya Sejak 1996 | Kapasitas 1.000 pcs/minggu</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">DE&LIN Fashion</div>
+                <ul class="nav-links">
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#clients">Klien</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Timeless Elegance, Modern Style</h2>
-      <p>Discover our handcrafted collection of premium garments designed for the modern individual who appreciates quality and style.</p>
-      <button class="shop-btn">Shop Collection</button>
-      <button class="story-btn">Our Story</button>
-    </div>
-    <div class="hero-image" onclick="alert('In a real site, this opens image upload')">
-      <div>
-        <p><strong>Hero Image</strong></p>
-        <p style="font-size: 12px;">Click to add your image</p>
-      </div>
-    </div>
-  </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="company-intro">
+                    <h2 style="color: #d63384; font-size: 2rem; margin-bottom: 20px;">🧵 Tentang DE&LIN Fashion</h2>
+                    
+                    <p><strong>DE&LIN Fashion</strong> adalah perusahaan keluarga yang bergerak di bidang <strong>konveksi dan jasa makloon</strong>, berdiri sejak tahun <strong>1996</strong>. Kami telah menjadi mitra terpercaya dalam memproduksi berbagai jenis <strong>pakaian jadi berkualitas</strong>, baik untuk kebutuhan personal maupun skala besar.</p>
+                    
+                    <h3 style="color: #d63384; margin: 25px 0 15px 0;">Kami melayani produksi:</h3>
+                    <ul>
+                        <li>Pakaian anak-anak & dewasa (pria & wanita)</li>
+                        <li>Busana muslim</li>
+                        <li>Seragam sekolah & instansi</li>
+                        <li>Pakaian custom sesuai desain dan kebutuhan klien</li>
+                    </ul>
+                    
+                    <h3 style="color: #d63384; margin: 25px 0 15px 0;">Selain produksi pakaian, kami juga menyediakan:</h3>
+                    <ul>
+                        <li><strong>Jasa makloon</strong> (CMT) sejak tahun <strong>2015</strong></li>
+                        <li><strong>Bordir komputer</strong> profesional</li>
+                        <li><strong>Sablon DTF (Direct Transfer Film)</strong> berkualitas tinggi</li>
+                    </ul>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">1996</div>
+                            <div class="stat-label">Berdiri Sejak</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1000</div>
+                            <div class="stat-label">pcs/minggu</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2015</div>
+                            <div class="stat-label">Jasa Makloon</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Tahun Berpengalaman</div>
+                        </div>
+                    </div>
+                    
+                    <p>Dengan kapasitas produksi hingga <strong>1.000 pcs per minggu</strong>, kami siap memenuhi kebutuhan Anda secara cepat dan tepat waktu, baik untuk brand lokal, komunitas, instansi, maupun reseller.</p>
+                </div>
 
-  <section id="products" class="products">
-    <h3>Our Products</h3>
-    <div class="product-grid">
-      <div class="product-card" onclick="alert('Upload image here')">
-        <div>Product Image 1</div>
-        <p>Classic Linen Shirt</p>
-      </div>
-      <div class="product-card" onclick="alert('Upload image here')">
-        <div>Product Image 2</div>
-        <p>Tailored Cotton Pants</p>
-      </div>
-      <div class="product-card" onclick="alert('Upload image here')">
-        <div>Product Image 3</div>
-        <p>Casual Wool Sweater</p>
-      </div>
-    </div>
-  </section>
+                <div class="highlight">
+                    <h3>🌟 Visi</h3>
+                    <p>Menjadi mitra konveksi dan makloon terpercaya di Indonesia yang mengutamakan kualitas, ketepatan, dan kepuasan pelanggan dalam setiap jahitan.</p>
+                </div>
 
-  <section id="about" class="about">
-    <h3>About Us</h3>
-    <p style="text-align: center; max-width: 700px; margin: auto;">DE&LIN Fashion is a family-owned garment business committed to offering timeless, handcrafted fashion pieces that combine elegance and everyday comfort.</p>
-  </section>
+                <div class="highlight">
+                    <h3>🎯 Misi</h3>
+                    <ol>
+                        <li>Menyediakan layanan konveksi dan makloon yang fleksibel, cepat, dan berkualitas tinggi.</li>
+                        <li>Mengembangkan produk fashion yang sesuai tren namun tetap terjangkau.</li>
+                        <li>Memberdayakan tenaga kerja lokal dengan keterampilan menjahit dan produksi.</li>
+                        <li>Menjalin kemitraan jangka panjang dengan pelaku usaha, komunitas, dan institusi.</li>
+                        <li>Berinovasi dalam proses produksi seperti penggunaan teknologi bordir & sablon DTF.</li>
+                    </ol>
+                </div>
+            </section>
 
-  <section id="faq" class="faq">
-    <h3>FAQ</h3>
-    <div class="faq-item">
-      <strong>What types of products do you sell?</strong>
-      <p>We sell a variety of premium garments including shirts, pants, and seasonal wear for men and women.</p>
-    </div>
-    <div class="faq-item">
-      <strong>Do you offer custom tailoring?</strong>
-      <p>Yes, we offer custom tailoring services upon request for select items.</p>
-    </div>
-  </section>
+            <!-- Clients Section -->
+            <section id="clients" class="section">
+                <h2 class="section-title">Klien Kami</h2>
+                
+                <div class="clients-section">
+                    <h3>👔 Klien Konveksi</h3>
+                    <div class="clients-grid">
+                        <div class="client-card">
+                            <div class="brand-name">Sharae</div>
+                            <div class="location">📍 Bandung</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Eve</div>
+                            <div class="location">📍 Bogor</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Sambas</div>
+                            <div class="location">📍 Cimahi</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Tiludua</div>
+                            <div class="location">📍 Bandung</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Indojaya</div>
+                            <div class="location">📍 Sukabumi</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Dan Lainnya</div>
+                            <div class="location">📍 Berbagai Kota</div>
+                        </div>
+                    </div>
+                </div>
 
-  <section id="order" class="order">
-    <h3>Place an Order</h3>
-    <p style="text-align:center;">To place an order, please fill out the form below and we’ll contact you for confirmation and payment.</p>
-    <form onsubmit="alert('Order submitted! Payment method will follow.'); return false;">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <input type="text" placeholder="Product Name / Code" required />
-      <textarea rows="4" placeholder="Additional Notes (Size, Color, etc)"></textarea>
-      <button type="submit">Submit Order</button>
-    </form>
-  </section>
+                <div class="clients-section">
+                    <h3>✂️ Klien Makloon</h3>
+                    <div class="clients-grid">
+                        <div class="client-card">
+                            <div class="brand-name">Neric</div>
+                            <div class="location">📍 Bandung</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Privestudio</div>
+                            <div class="location">📍 Bandung</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Kyudi</div>
+                            <div class="location">📍 Bandung</div>
+                        </div>
+                        <div class="client-card">
+                            <div class="brand-name">Dan Lainnya</div>
+                            <div class="location">📍 Bandung & Sekitarnya</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-  <section id="contact" class="contact">
-    <h3>Contact Us</h3>
-    <p style="text-align: center; max-width: 700px; margin: auto;">Have questions or custom requests? Reach us via WhatsApp at <strong>+62-xxx-xxx-xxxx</strong> or email <strong>delinfashion@example.com</strong>.</p>
-  </section>
+            <!-- Services Section -->
+            <section id="services" class="section">
+                <h2 class="section-title">Layanan Kami</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">👔</div>
+                        <h3 class="service-title">Konveksi Pakaian Jadi</h3>
+                        <p class="service-description">Produksi berbagai jenis pakaian berkualitas tinggi dengan desain sesuai kebutuhan klien.</p>
+                        <ul class="service-features">
+                            <li>Pakaian anak-anak & dewasa</li>
+                            <li>Busana muslim</li>
+                            <li>Seragam sekolah & instansi</li>
+                            <li>Pakaian custom design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">✂️</div>
+                        <h3 class="service-title">Jasa Makloon (CMT)</h3>
+                        <p class="service-description">Layanan Cut, Make, Trim profesional sejak 2015 untuk brand fashion yang membutuhkan partner produksi terpercaya.</p>
+                        <ul class="service-features">
+                            <li>Pemotongan bahan presisi</li>
+                            <li>Jahit berkualitas tinggi</li>
+                            <li>Finishing sempurna</li>
+                            <li>Quality control ketat</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3 class="service-title">Bordir Komputer</h3>
+                        <p class="service-description">Layanan bordir komputer profesional dengan teknologi modern untuk hasil yang presisi dan tahan lama.</p>
+                        <ul class="service-features">
+                            <li>Bordir logo perusahaan</li>
+                            <li>Bordir nama & tulisan</li>
+                            <li>Desain custom</li>
+                            <li>Berbagai jenis benang</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🖨️</div>
+                        <h3 class="service-title">Sablon DTF</h3>
+                        <p class="service-description">Sablon Direct Transfer Film berkualitas tinggi dengan hasil yang tajam, tahan lama, dan tidak mudah luntur.</p>
+                        <ul class="service-features">
+                            <li>Hasil print berkualitas tinggi</li>
+                            <li>Tahan cuci & tidak mudah luntur</li>
+                            <li>Cocok untuk berbagai bahan</li>
+                            <li>Desain full color</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 DE&LIN Fashion. All rights reserved.</p>
-  </footer>
+    <!-- Contact Section -->
+    <footer id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Hubungi Kami</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Siap melayani kebutuhan konveksi dan makloon Anda</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📱 WhatsApp</h3>
+                    <p><strong>085156539646</strong><br>Hubungi kami untuk konsultasi<br>dan pemesanan</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><strong>delinfashion@gmail.com</strong><br>Kirim pertanyaan detail<br>via email</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🏭 Workshop</h3>
+                    <p><strong>Kp. Batukarut No. 44<br>Kab. Bandung</strong><br>Kunjungi workshop kami<br>untuk lihat produksi langsung</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ Jam Operasional</h3>
+                    <p>Senin - Sabtu<br>08:00 - 17:00 WIB</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
